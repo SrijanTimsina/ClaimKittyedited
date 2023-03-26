@@ -1,5 +1,9 @@
 .main-footer {
   background-color: #f093c3;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+  overflow-x: hidden;
 }
 .main-footer .footer-content {
   display: flex;

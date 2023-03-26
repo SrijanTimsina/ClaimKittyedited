@@ -24,10 +24,10 @@ export function Footer() {
           <div className="sitemap">
             <h3>Sitemap</h3>
             <a target="_blank" href="https://app.claimkitty.com/app">
-              Create Airdrop
+              Create Kitties
             </a>
             <a target="_blank" href="https://app.claimkitty.com/user">
-              Claim Airdrop
+              Claim Kitties
             </a>
             <a target="_blank" href="https://app.claimkitty.com/minting">
               Mint NFT
@@ -41,10 +41,10 @@ export function Footer() {
             <a target="_blank" href="https://twitter.com/ClaimKitty">
               Twitter
             </a>
-            <a target="_blank" href="https://discord.gg/7x9U8YUa">
+            <a target="_blank" href="https://discord.com/invite/CA4DTnxGPk">
               Discord
             </a>
-            <a target="_blank" href="forum.claimkitty.com">
+            <a target="_blank" href="https://claimkitty.com/forum">
               Forum
             </a>
           </div>

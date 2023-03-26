@@ -58,9 +58,15 @@ export function Header() {
   return (
     <header>
       <div className="iconContainer">
-        <div className="icon" id="twitter-icon"></div>
-        <div className="icon" id="discord-icon"></div>
-        <div className="icon" id="flarum-icon"></div>
+        <a target={'_blank'} href="https://twitter.com/ClaimKitty">
+          <div className="icon" id="twitter-icon"></div>
+        </a>
+        <a target={'_blank'} href="https://discord.com/invite/CA4DTnxGPk">
+          <div className="icon" id="discord-icon"></div>
+        </a>
+        <a target={'_blank'} href="https://claimkitty.com/forum">
+          <div className="icon" id="flarum-icon"></div>
+        </a>
       </div>
 
       <img

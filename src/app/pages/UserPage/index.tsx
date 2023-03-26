@@ -283,7 +283,16 @@ export function UserPage() {
       <Header />
 
       <AppWrapper address={address} isSupportedNetwork={isSupportedNetwork}>
-        <div className="container" style={{ bottom: 30 }}>
+        <div
+          className="container"
+          style={{
+            bottom: 30,
+            minHeight: 'calc(100vh - 130px)',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+          }}
+        >
           <div style={{ display: 'flex', justifyContent: 'center', gap: 20 }}>
             <a href="/app">Create Kitties</a>
             <a href="/user">[Collect Kitties]</a>
@@ -400,9 +409,9 @@ export function UserPage() {
           <p>
             <br />
           </p>
+          <Footer />
         </div>
       </AppWrapper>
-      <Footer />
     </>
   );
 }

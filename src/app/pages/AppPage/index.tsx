@@ -405,9 +405,9 @@ export function AppPage() {
               <br /> <br />{' '}
             </p>
           </form>
+          <Footer />
         </div>
       </AppWrapper>
-      <Footer />
     </>
   );
 }
