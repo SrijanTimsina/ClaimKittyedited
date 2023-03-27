@@ -35,6 +35,9 @@ export function Footer() {
             <a target="_blank" href="https://app.claimkitty.com/minting">
               Claim NFT
             </a>
+            <a target="_blank" href="https://bast.club/">
+              bast.club
+            </a>
           </div>
           <div className="social-links">
             <h3>Social Links</h3>
