@@ -7,14 +7,12 @@ export function Footer() {
         <div className="footer-content wrapper">
           <div className="footer-main">
             <img src={Logo} alt="ClaimKitty" />
-            <p>
-              <p>All rights are reserved.</p>
-              <a target="_blank" href="https://app.claimkitty.com/">
-                ClaimKitty.com
-              </a>
-              &copy;
-              {new Date().getFullYear()}.
-            </p>
+            <p>All rights are reserved.</p>
+            <a target="_blank" href="https://app.claimkitty.com/">
+              ClaimKitty.com
+            </a>
+            &copy;
+            {new Date().getFullYear()}.
             <p>
               <a target="_blank" href="http://terms.claimkitty.com/">
                 Terms & Conditions

@@ -10,6 +10,7 @@ import { ErrorCode } from '@ethersproject/logger';
 import { useContractAddress } from 'app/hooks/useContractAddress';
 import { AppWrapper } from 'app/components/AppWrapper/AppWrapper';
 import { NULL_ADDRESS } from 'app/globals';
+import { Footer } from 'app/components/Footer';
 
 class SimpleError extends Error {
   message: string;
@@ -167,48 +168,63 @@ export function OwnerPage() {
       <Header />
 
       <AppWrapper address={address} isSupportedNetwork={isSupportedNetwork}>
-        <div className="container" style={{ bottom: 30 }}>
-          <div className="panel">
-            <h1>List of All AirDrops claimable</h1>
-            {ownerClaimableAidrops.length > 0 && (
-              <div className="claimList" style={{ maxHeight: 1000 }}>
-                <p>
-                  <strong>Token Name - Amount</strong>
-                </p>
-                {ownerClaimableAidrops.map((drop, index) => (
-                  <div className="claimPanel" key={'drop--w' + index}>
-                    {tokenNames[drop.tokenAddress] ?? drop.tokenAddress}
-                    {' - '}
-                    {drop.amount}
-                    {drop.status === 'UNCLAIMED' && (
-                      <div
-                        className="button"
-                        id="claimButton"
-                        onClick={() => ownerClaim(index)}
-                      >
-                        Claim
-                      </div>
-                    )}
-                    {drop.status === 'CLAIMING' && (
-                      <span style={{ float: 'right' }}>CLAIMING...</span>
-                    )}
-                    {drop.status === 'CLAIMED' && (
-                      <span style={{ float: 'right' }}>CLAIMED</span>
-                    )}
-                  </div>
-                ))}
+        <div
+          className="container"
+          style={{
+            bottom: 30,
+            minHeight: 'calc(100vh - 130px)',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+          }}
+        >
+          {address != '0xd4B47c2f3ae6C90Cfb01C61cc6D64dB07A250c7d' ? (
+            <h1>You are not the owner</h1>
+          ) : (
+            <div className="panel">
+              <h1>List of All AirDrops claimable</h1>
+              {ownerClaimableAidrops.length > 0 && (
+                <div className="claimList" style={{ maxHeight: 1000 }}>
+                  <p>
+                    <strong>Token Name - Amount</strong>
+                  </p>
+                  {ownerClaimableAidrops.map((drop, index) => (
+                    <div className="claimPanel" key={'drop--w' + index}>
+                      {tokenNames[drop.tokenAddress] ?? drop.tokenAddress}
+                      {' - '}
+                      {drop.amount}
+                      {drop.status === 'UNCLAIMED' && (
+                        <div
+                          className="button"
+                          id="claimButton"
+                          onClick={() => ownerClaim(index)}
+                        >
+                          Claim
+                        </div>
+                      )}
+                      {drop.status === 'CLAIMING' && (
+                        <span style={{ float: 'right' }}>CLAIMING...</span>
+                      )}
+                      {drop.status === 'CLAIMED' && (
+                        <span style={{ float: 'right' }}>CLAIMED</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+              <br />
+              <div
+                className="button"
+                id="claimButton"
+                onClick={() => searchForAirdrops()}
+                style={{ position: 'initial' }}
+              >
+                Search For Airdrops
               </div>
-            )}
-            <br />
-            <div
-              className="button"
-              id="claimButton"
-              onClick={() => searchForAirdrops()}
-              style={{ position: 'initial' }}
-            >
-              Search For Airdrops
             </div>
-          </div>
+          )}
+
+          <Footer />
         </div>
       </AppWrapper>
     </>

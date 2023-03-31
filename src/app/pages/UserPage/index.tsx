@@ -63,13 +63,13 @@ export function UserPage() {
   const provider = useProvider();
 
   const [contractAddress, isSupportedNetwork] = useContractAddress();
+  const nativeToken = '0x0000000000000000000000000000000000000000';
 
   const contract = useContract({
     addressOrName: contractAddress,
     contractInterface: contractABI,
     signerOrProvider: signer,
   });
-
   async function creatorClaim(index: number) {
     try {
       const airdrop = creatorClaimableAidrops[index];
@@ -232,10 +232,10 @@ export function UserPage() {
 
     callback();
   }
-  const searchForAirdrops = async () => {
+  const searchForAirdrops = async native => {
     try {
       if (address === undefined) return alert('Connect your wallet to use');
-      const token = searchToken.trim();
+      let token = native == true ? nativeToken : searchToken.trim();
       if (token === '') return alert('Enter token');
       setClaimableAidrops([]);
       setCreatorClaimableAidrops([]);
@@ -312,7 +312,11 @@ export function UserPage() {
               onChange={e => setSearchToken(e.target.value.trim())}
             />
             {!isSearchingForAidrops ? (
-              <div className="button" id="claimAll" onClick={searchForAirdrops}>
+              <div
+                className="button"
+                id="claimAll"
+                onClick={e => searchForAirdrops(false)}
+              >
                 Search Token
               </div>
             ) : (
@@ -320,6 +324,21 @@ export function UserPage() {
                 <div style={{ margin: '10px 0' }}>{airdropSerachStatus}</div>
               </>
             )}
+            <button
+              className="button"
+              style={{
+                display: 'block',
+                marginTop: '10px',
+                backgroundColor: '#EFA1D2',
+                border: 'none',
+                color: 'white',
+                width: '100%',
+                fontSize: '18px',
+              }}
+              onClick={e => searchForAirdrops(true)}
+            >
+              Search For Native Kitties
+            </button>
             {claimableAidrops.length > 0 && (
               <div className="claimList" style={{ marginTop: 20 }}>
                 {claimableAidrops.map((drop, index) => (
