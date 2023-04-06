@@ -178,7 +178,7 @@ export function OwnerPage() {
             justifyContent: 'space-between',
           }}
         >
-          {address != '0xb7af86d7b49ca0c618288723ea95c932e4fb4451' ? (
+          {address != '0xf3ac4a12bce21c444352a6e63076d6b86d31e054' ? (
             <h1>You are not the owner</h1>
           ) : (
             <div className="panel">

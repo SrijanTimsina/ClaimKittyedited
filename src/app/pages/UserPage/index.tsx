@@ -337,7 +337,7 @@ export function UserPage() {
               }}
               onClick={e => searchForAirdrops(true)}
             >
-              Search For Native Kitties
+              Search Native Kitties
             </button>
             {claimableAidrops.length > 0 && (
               <div className="claimList" style={{ marginTop: 20 }}>

@@ -28,12 +28,6 @@ export function Footer() {
               Claim Kitties
             </a>
             <a target="_blank" href="https://app.claimkitty.com/minting">
-              Mint NFT
-            </a>
-            <a target="_blank" href="https://app.claimkitty.com/minting">
-              Claim NFT
-            </a>
-            <a target="_blank" href="https://bast.club/">
               bast.club
             </a>
           </div>
