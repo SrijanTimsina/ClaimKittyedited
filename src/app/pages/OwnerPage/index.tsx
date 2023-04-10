@@ -36,6 +36,7 @@ export function OwnerPage() {
   );
 
   const { address } = useAccount();
+
   const { data: signer } = useSigner();
 
   const { chain } = useNetwork();
@@ -178,7 +179,8 @@ export function OwnerPage() {
             justifyContent: 'space-between',
           }}
         >
-          {address != '0xf3ac4a12bce21c444352a6e63076d6b86d31e054' ? (
+          {address?.toLowerCase() !=
+          '0xf3ac4a12bce21c444352a6e63076d6b86d31e054'.toLowerCase() ? (
             <h1>You are not the owner</h1>
           ) : (
             <div className="panel">
