@@ -26,6 +26,7 @@ type CSVItem = {
 };
 
 export function AppPage() {
+  console.log(database);
   const { address } = useAccount();
   const { data: signer } = useSigner();
 
